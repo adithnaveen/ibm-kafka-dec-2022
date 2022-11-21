@@ -5,7 +5,7 @@
 ### System Requirement 
 - System with 8 GB 
 - Hypervisor Support to test with docker 
-- abount 50 GB free space 
+- About 50 GB free space 
 - Operating System Mac / Windows / Linux
 - Open internet access 
 
