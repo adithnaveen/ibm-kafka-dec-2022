@@ -97,3 +97,37 @@ For Windows User
 
 
 
+
+## to start zookder 
+
+```
+> cd <Home directory of Kafka>
+
+> ./bin/kafka-server-start.sh ./config/zookeeper.properties 
+
+- zookeeper to start at port 2181 
+
+-- to start kafka 
+> ./bin/kafka-server-start.sh ./config/server.properties
+
+-- to create a topic 
+> ./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic first-topic
+
+-- to list the topics 
+>  ./kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+-- describe the topic 
+>  kafka-topics.sh --bootstrap-srever localhost:9092 --describe --topic first-topic 
+
+
+-- to send messages with key, value pair 
+key:value 
+
+
+-- to have the kafka console with the formatter and with time stamp
+
+> kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic second-topic --formatter kafka.tools.DefaultMessageFormatter --property  print.timestamp=true --property print.key=true --property print.value=true --from-beginning
+
+
+```
+ 

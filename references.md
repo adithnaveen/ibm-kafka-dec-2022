@@ -4,5 +4,6 @@
 
 
 
-
+## case studies of Kafka 
+> https://kafka.apache.org/powered-by
 
