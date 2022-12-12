@@ -50,5 +50,50 @@
 
 
 
+For Windows User 
+> /Volumes/Kanchan/Softwares/kafka/kafka-3.1.0/bin/windows
+
+> Highly cohesive - Loosely Coupled 
+
+> json format
+```
+{
+    firstName: "Latika", 
+    lastName: "Yadav", 
+    address: {
+        hno: 123, 
+        street: "Green Filed Blvd",
+        city : "Virginia"
+    }
+
+}
+```
+
+
+- var response = restTemplate.exchange("http://ibm.com/retailproject/asia/product", HttpMethod.GET, entity, String.class).getBody();
+
+404 
+
+
+- ESB - Enterprise Service Bus 
+    - Open MQ 
+    - Rabbit MQ 
+    - Mule Soft 
+    - Tibco 
+    - Kafka - LinkedIn 
+
+- Apache 
+
+
+
+- With ESB We should reduce complexity 
+- When the request is made even when the receiver is not there immediately the message is kept, 
+    such that when the receiver comes back he/she can take it 
+- producer consumer problem 
+- when the consumer is not there by default 1 week 3600*24*7
+- In Kafka the data is immutable 
+- Zookeeper 
+    - ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+
 
 
