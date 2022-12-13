@@ -220,3 +220,27 @@ One Instance  (x)
     Fourth Instance (x) - delayed OLAP 
 
 
+
+
+
+GROUP                         TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
+third-topic-first-application third-topic     0          5               5               0               console-consumer-232d9508-d4c4-49bd-9e8c-56abacc04ef6 /127.0.0.1      console-consumer
+third-topic-first-application third-topic     1          3               3               0               console-consumer-232d9508-d4c4-49bd-9e8c-56abacc04ef6 /127.0.0.1      console-consumer
+third-topic-first-application third-topic     2          4               4               0               console-consumer-2b08ac78-3e35-4c39-a4bd-968d75d1a190 /127.0.0.1      console-consumer
+
+
+-- to reset the offsets 
+>  kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group third-topic-first-application --reset-offsets --to-earliest --execute --topic third-topic
+
+
+GROUP                         TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+third-topic-first-application third-topic     0          0               5               5               -               -               -
+third-topic-first-application third-topic     1          0               3               3               -               -               -
+third-topic-first-application third-topic     2          0               4               4               -               -               -
+
+- i dont want to reset all the messages instead by 2 messages 
+
+
+
+
+
