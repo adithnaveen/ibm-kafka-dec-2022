@@ -7,3 +7,13 @@
 ## case studies of Kafka 
 > https://kafka.apache.org/powered-by
 
+
+## Kafka Rebalancing Problems 
+> https://medium.com/bakdata/solving-my-weird-kafka-rebalancing-problems-c05e99535435
+
+## kafka slides
+> http://cloudurable.com/ppt/kafka-tutorial-cloudruable-v2.pdf
+
+
+
+

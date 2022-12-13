@@ -46,10 +46,7 @@
 - Yogesh - 
 
 
-
-
-
-
+ 
 For Windows User 
 > /Volumes/Kanchan/Softwares/kafka/kafka-3.1.0/bin/windows
 
@@ -131,3 +128,95 @@ key:value
 
 ```
  
+
+
+# Day 2 
+    - Kafka is written with Scala 
+        - so that way it is by default async + support reactive 
+    - In DB you can Query, in kafka there is no query concept 
+        - to send message you need kafka producer 
+        - to receive message you need kafka consumer - for this need topic 
+    - Kafka message by default kept for 1 week 
+    - By default kafka shall have 1 partition 
+    - Kafka 2.x - Zookeeper is mandatory 
+    - Kafka 3.x - Zookeeper is option ( for production its mandatory)
+        - KRaft which shall replace Zookeeper 
+    - Kafka 4.x - Zookeeper  shall be removed 
+
+- Port Numbers 
+    - Zookeeper - 2181 
+    - Kafka - 9092 
+
+
+- Implementation of Kafka with Partition, and Consumer Groups 
+- Rebalancing 
+- implementing Kafka with Programming Language Java 
+    - Eclipse 
+- Start Kafka with KRaft without zookeeper 
+
+- in kafka the security is dont in flight this does not happen with encryption (Private-Public)
+    - the data is hashed 
+    - Murmur2 
+        - Utils.toPositive(Utils.murmur2(keyBytes)) % numPartitions;
+
+
+
+- The message can be of 
+    - int 
+    - float / Double 
+    - json 
+    - string 
+    - avro 
+    - protobuf ..... 
+
+
+```
+
+-- to create a topic 
+> ./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic fourth-topic --partitions 3 
+
+- start the producer 
+> kafka-console-producer.sh --bootstrap-server localhost:9092 --topic fourth-topic
+
+-start the consumer (without group)
+> kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic fourth-topic
+
+-start the consumer (with group)
+> kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic fourth-topic --group first-application
+(At this time all the messages are given to first-application group)
+
+- open another terminal and start the consumer with the same group and you will the messages getting balanced between 2 consumers 
+- all this is happening since you have 3 parititions 
+> kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic fourth-topic --group first-application
+
+(when you have more than 1 consumer in the same group balances the messages )
+> kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic fourth-topic --group second-application
+
+> kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic fourth-topic --group second-application
+
+- you can get to know how many messages are sent to each partition and how many are read by below command 
+> kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group second-application
+
+- stop the consumer group second-application with ctrl+c 
+
+> send some message now with kafka producer 
+
+then you will see lag value which means those many messages are not read 
+> kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group second-application
+
+
+- you can get the offset values of different topics from below command (please change last number)
+> kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group console-consumer-59382
+
+```
+
+
+
+
+
+One Instance  (x)
+    Second Instance  (x)
+    Third Instance (x)
+    Fourth Instance (x) - delayed OLAP 
+
+
