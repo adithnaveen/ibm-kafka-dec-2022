@@ -283,5 +283,14 @@ public interface Callback {
     void onCompletion(RecordMetadata metadata, Exception exception);
 }
 
+Tomorrow 
 
+- how to de/serialize json 
+- staring kafka with KRaft 
+- integrating kafka with spring boot application 
+- clurering - multi node single zookeeper 
+- clurering - multi node multiple zookeeper 
+- Dockerizing Kafka + testing with CLI 
+- show consuming large data with wiki or similar (case study)
+- some GUI  
 
