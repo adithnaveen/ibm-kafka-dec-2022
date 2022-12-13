@@ -271,4 +271,17 @@ third-topic-first-application third-topic     2          0               4      
 3. Maven (implicitly available) - Dependency Mechanism 
     3.1 Kafka Client - pom.xml 
     3.2 logger - slf4j + simple 
+4. PROGRAM 
+    4.1 Consifugation - bootstrap.servers:9092 - and letting know what kind of values are sent 
+    3.2 producer configuration (topic)
+    3.3 Generate kafka record 
+    3.4 producer.send(record,callback)
+    3.5 make sure you flush and close to persist the message to kafka 
+
+
+public interface Callback {
+    void onCompletion(RecordMetadata metadata, Exception exception);
+}
+
+
 

@@ -28,12 +28,9 @@ public class KafkaProducerExample01 {
 		KafkaProducer<String, String> producer = new KafkaProducer<>(prop);
 		
 		ProducerRecord<String, String> producerRecord = 
-				new ProducerRecord<String, String>("ibm-java-topic", "Hello World From Java1");
+				new ProducerRecord<String, String>("ibm-java-topic", "Hello World From Java3");
 		
-		producer.send(producerRecord, new Callback() {
-			
-			@Override
-			public void onCompletion(RecordMetadata metadata, Exception exception) {
+		producer.send(producerRecord, (metadata, exception) ->  {
 				if(exception == null) {
 					log.info("----------------------------------------------");
 					log.info("Message Sent Successfully");
@@ -45,7 +42,6 @@ public class KafkaProducerExample01 {
 				}else {
 					log.error("Sorry! Exception while posting message {}", exception);
 				}
-			}
 		});
 		
 		producer.flush(); 
