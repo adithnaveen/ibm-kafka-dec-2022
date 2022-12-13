@@ -14,6 +14,10 @@
 ## kafka slides
 > http://cloudurable.com/ppt/kafka-tutorial-cloudruable-v2.pdf
 
+## maven plugin 
+> https://maven.apache.org/plugins/
+
+
 
 
 

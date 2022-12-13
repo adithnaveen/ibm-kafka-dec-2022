@@ -229,8 +229,10 @@ third-topic-first-application third-topic     1          3               3      
 third-topic-first-application third-topic     2          4               4               0               console-consumer-2b08ac78-3e35-4c39-a4bd-968d75d1a190 /127.0.0.1      console-consumer
 
 
--- to reset the offsets 
->  kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group third-topic-first-application --reset-offsets --to-earliest --execute --topic third-topic
+after reset 
+
+
+
 
 
 GROUP                         TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
@@ -242,5 +244,31 @@ third-topic-first-application third-topic     2          0               4      
 
 
 
+-- to reset the offsets 
+>  kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group third-topic-first-application --reset-offsets --to-earliest --execute --topic third-topic
 
+-- to reset offset by two (back) -2
+> kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group third-topic-first-application --reset-offsets --shift-by -2 --execute --topic third-topic
+
+-- describe the group you should see the lag of two 
+> kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group third-topic-first-application
+
+
+> kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group third-topic-first-application --reset-offsets --shift-by 2 --execute --topic third-topic
+
+
+
+- Cluster - group of broker (it can 1 broker but in reality it should be min 2)
+- Brocker - Kafka (1 instace )
+
+> kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-with-replica --create --partitions 3 (this will work)
+> kafka-topics.sh --bootstrap-server localhost:9092 --topic partition-with-replica --create --partitions 3 --replication-factor 3 (will not work)
+
+
+## Working with Java 
+1. Java (done)
+2. Eclipse (Done)
+3. Maven (implicitly available) - Dependency Mechanism 
+    3.1 Kafka Client - pom.xml 
+    3.2 logger - slf4j + simple 
 
