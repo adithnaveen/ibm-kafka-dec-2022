@@ -283,14 +283,37 @@ public interface Callback {
     void onCompletion(RecordMetadata metadata, Exception exception);
 }
 
-Tomorrow 
 
-- how to de/serialize json 
-- staring kafka with KRaft 
-- integrating kafka with spring boot application 
-- clurering - multi node single zookeeper 
-- clurering - multi node multiple zookeeper 
-- Dockerizing Kafka + testing with CLI 
-- show consuming large data with wiki or similar (case study)
-- some GUI  
+
+# Day 3 
+
+- how to de/serialize json - 
+    ```
+        class Employee {
+            private int empId; 
+            private String empName; 
+
+            public Employee (int empId, String empName) {
+                // set the values 
+            }
+
+            // getters and setters 
+        }
+    ```
+- staring kafka with KRaft - 
+- integrating kafka with spring boot application - 
+- show consuming large data with wiki or similar (case study) - 
+- some GUI -
+- clurering - multi node single zookeeper - 
+- clurering - multi node multiple zookeeper - 
+- Dockerizing Kafka + testing with CLI - 
+
+
+
+
+
+
+
+
+
 
