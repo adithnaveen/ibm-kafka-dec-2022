@@ -310,6 +310,14 @@ public interface Callback {
 - Kafka GUI -
 - show consuming large data with wiki or similar (case study) - 
 - staring kafka with KRaft - 
+    -  since there are many error's in windows it is not supported 
+```
+        > ./bin/kafka-storage.sh random-uuid
+        > ./bin/kafka-storage.sh format -t 1oIfb0B0RBS-xhwhkVy2cg -c ./config/kraft/server.properties 
+        > ./bin/kafka-server-start.sh ./config/kraft/server.properties
+        >  kafka-console-producer.sh --bootstrap-server localhost:9092 --topic kraft-first-topic
+        >  kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kraft-first-topic
+```
 - clurering - multi node single zookeeper - 
 - clurering - multi node multiple zookeeper - 
 - Dockerizing Kafka + testing with CLI - 
