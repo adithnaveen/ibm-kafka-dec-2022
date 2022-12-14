@@ -300,8 +300,14 @@ public interface Callback {
             // getters and setters 
         }
     ```
+    -  try to do deserialize 
+
+- integrating kafka with spring boot application
+
+    ```
+        https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.0.0&packaging=jar&jvmVersion=11&groupId=com.ibm.kafka.works&artifactId=spring-boot-works&name=spring-boot-works&description=testing%20on%20spring%20boot%20and%20kafka&packageName=com.ibm.kafka.works.spring-boot-works&dependencies=web,kafka
+    ```
 - staring kafka with KRaft - 
-- integrating kafka with spring boot application - 
 - show consuming large data with wiki or similar (case study) - 
 - some GUI -
 - clurering - multi node single zookeeper - 
