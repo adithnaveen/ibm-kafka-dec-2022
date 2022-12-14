@@ -307,9 +307,9 @@ public interface Callback {
     ```
         https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.0.0&packaging=jar&jvmVersion=11&groupId=com.ibm.kafka.works&artifactId=spring-boot-works&name=spring-boot-works&description=testing%20on%20spring%20boot%20and%20kafka&packageName=com.ibm.kafka.works.spring-boot-works&dependencies=web,kafka
     ```
-- staring kafka with KRaft - 
-- show consuming large data with wiki or similar (case study) - 
 - Kafka GUI -
+- show consuming large data with wiki or similar (case study) - 
+- staring kafka with KRaft - 
 - clurering - multi node single zookeeper - 
 - clurering - multi node multiple zookeeper - 
 - Dockerizing Kafka + testing with CLI - 
