@@ -100,7 +100,7 @@ For Windows User
 ```
 > cd <Home directory of Kafka>
 
-> ./bin/kafka-server-start.sh ./config/zookeeper.properties 
+> ./bin/zookeeper-server-start.sh ./config/zookeeper.properties 
 
 - zookeeper to start at port 2181 
 
@@ -309,7 +309,7 @@ public interface Callback {
     ```
 - staring kafka with KRaft - 
 - show consuming large data with wiki or similar (case study) - 
-- some GUI -
+- Kafka GUI -
 - clurering - multi node single zookeeper - 
 - clurering - multi node multiple zookeeper - 
 - Dockerizing Kafka + testing with CLI - 
